@@ -1,6 +1,15 @@
 name: Run Tox tests
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - master
+      - releases/*
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
 
 jobs:
   build:
